@@ -1,5 +1,5 @@
 import React, { useEffect, useState, createContext } from "react";
-import { ThemeProvider } from "react-native-elements";
+import { ThemeProvider as theme } from "react-native-elements";
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export const ThemeContext = createContext({
@@ -24,7 +24,8 @@ export function ThemeProvider(props) {
     
     return (
         <ThemeContext.Provider value={data}>
-            <Theme theme={null}>{children}</Theme>
+            {children}
+            {/* <Theme theme={null}>{children}</Theme> */}
         </ThemeContext.Provider>
     );
 }

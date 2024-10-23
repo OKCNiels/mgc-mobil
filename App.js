@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import { Text, SafeAreaView } from 'react-native';
+import { ThemeProvider } from "./src/context";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>APLICATIVO DE MGC!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider>
+
+      <SafeAreaView>
+        <Text>APLICATIVO DE MGC!</Text>
+      </SafeAreaView>
+    </ThemeProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
