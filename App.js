@@ -1,23 +1,13 @@
 
-import { Text, SafeAreaView } from 'react-native';
 import { ThemeProvider } from "./src/context";
+import { RootNavigation } from "./src/navigation/RootNavigation";
+
 
 export default function App() {
   return (
     <ThemeProvider>
 
-      <SafeAreaView>
-        <Text>APLICATIVO DE MGC!</Text>
-      </SafeAreaView>
+      <RootNavigation></RootNavigation>
     </ThemeProvider>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
