@@ -12,12 +12,28 @@ export const ThemeContext = createContext({
 
 export function ThemeProvider(props) { 
     const { children } = props;
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
 
-    const toggleTheme = () => {
+    //obtener el tema guardado
+    useEffect(() => {
+        
+        (async () => {
+            const response = await AsyncStorage.getItem("theme");
+            console.log(response);
+            if (response) setDarkMode(JSON.parse(response));
+            
+        })();
+    }, []);
+    
+    //guardar el valor del tema en el storage del celular
+    const toggleTheme = async () => {
         setDarkMode(!darkMode);
+        await AsyncStorage.setItem("theme",JSON.stringify(!darkMode));
     };
 
+    
+
+    
     const data = {
         darkMode,
         toggleTheme,
